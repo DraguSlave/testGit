@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>import</title>
+</head>
+<body>
+<div>
+    <form action="/import" enctype="multipart/form-data" method="post">
+        <input type="file" name="file"/><br/>
+        <input type="submit" value="导入">
+    </form>
+    <a type="button" href="/out">导出</a>
+
+    <table>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+        </tr>
+        <tr th:each="staff : ${staffList}">
+            <td th:text="${staff.id}"></td>
+            <td th:text="${staff.name}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
